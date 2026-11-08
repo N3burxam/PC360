@@ -1,0 +1,24 @@
+{
+  "name": "pc360",
+  "version": "0.5.2",
+  "description": "Vollbild-Dashboard im Metro-Stil für den Xbox-360-PC",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-packager . PC360 --platform=win32 --arch=x64 --out=dist --overwrite --icon=build/icon.ico --ignore=^/dist --ignore=^/build --ignore=^/autostart --ignore=^/start\\.bat --ignore=^/README\\.md --ignore=^/\\.gitignore --ignore=^/\\.claude --ignore=^/CHANGELOG\\.md --ignore=^/xenia/ --ignore=^/xenia_canary_windows --ignore=^/avatar-modell --ignore=^/ANLEITUNG\\.md --ignore=^/LIZENZEN\\.md",
+    "postbuild": "node build/fuses.js && node build/copy-xenia.js",
+    "prestart": "node build/copy-avatar.js",
+    "predev": "node build/copy-avatar.js",
+    "prebuild": "node build/copy-avatar.js"
+  },
+  "devDependencies": {
+    "@electron/fuses": "^2.1.3",
+    "@electron/packager": "^20.3.0",
+    "electron": "^45.2.3"
+  },
+  "allowScripts": {
+    "electron@45.2.3": true
+  }
+}

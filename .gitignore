@@ -1,0 +1,20 @@
+node_modules/
+dist/
+# Original-Xbox-Sounds: nur lokal, nicht hochladen
+src/assets/sounds/*
+!src/assets/sounds/README.md
+# Werbebilder von 2015 (xbox.com/Wayback, Screenshots): nur lokal, nicht hochladen
+src/assets/ads/*
+!src/assets/ads/README.md
+build/sound-sources/
+build/synth-sounds/
+
+# Xenia (Xbox 360-Emulator): nur lokal, wird beim Build neben PC360.exe kopiert
+xenia/
+xenia_canary_windows/
+# Heruntergeladene 3D-Modelle (Quaternius, CC0) – nur die benutzten Dateien kommen nach src/assets
+avatar-modell/
+src/assets/avatar/
+
+# Original-Startup-Video: nur lokal
+src/assets/startup.*
